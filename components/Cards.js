@@ -51,4 +51,25 @@ function cardCreator(articleObj) {
     return card;
 }
 
+axios.get('https://lambda-times-api.herokuapp.com/articles')
+    .then (response => {
+        const articles = response.data.articles;
+
+        const bootstrap = articles['bootstrap'];
+        const javascript = articles['javascript'];
+        const jQueryArticles = articles['jquery'];
+        const nodeArticles = articles['nodes'];
+        const technology = articles['technology'];
+
+        console.log(articles);
+        console.log(bootstrap);
+        console.log(javascript);
+        console.log(jQueryArticles);
+        console.log(nodeArticles);
+        console.log(technology);
+        console.log('hello');
+    })
+    .catch (err => {
+        console.log('Error: ', err);
+    })
 
